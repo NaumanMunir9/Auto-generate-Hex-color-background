@@ -1,20 +1,20 @@
 const hexNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
 
 const hexBtn = document.querySelector(".hexBtn");
-const bodyBcg = document.querySelector("body");
+const body = document.querySelector("body");
 const hex = document.querySelector(".hex");
 
-// Adding functionality to the getHex
-function getHex() {
-  let hexCol = "#";
+// adding functionality to button to generate hex numbers and change background color
+function generateHex() {
+  let hexColor = "#";
 
   for (let i = 0; i < 6; i++) {
     let random = Math.floor(Math.random() * hexNumbers.length);
-    hexCol += hexNumbers[random];
-    bodyBcg.style.backgroundColor = hexCol;
-    hex.innerHTML = hexCol;
+    hexColor += hexNumbers[random];
+    body.style.backgroundColor = hexColor;
+    hex.innerHTML = hexColor;
   }
 }
 
-// Event Listener
-hexBtn.addEventListener("click", getHex);
+// event listener applied on the button to generate hex color and change background color
+hexBtn.addEventListener("click", generateHex);
